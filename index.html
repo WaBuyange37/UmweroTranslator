@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Umwero Alphabet Translator</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Umwero Alphabet Translator</h1>
+            <p class="tagline">"Preserving Heritage, Empowering Communication"</p>
+            <p class="umwero-font alphabet"> | } { : A B C D E F G H I J K L M N O P Q R S T U V W X Y Z</p>
+        </header>
+
+        <nav>
+            <label for="translationDirection">Translation Direction:</label>
+            <select id="translationDirection">
+                <option value="latinToUmwero">Latin to Umwero</option>
+                <option value="umweroToLatin">Umwero to Latin</option>
+            </select>
+        </nav>
+
+        <main>
+            <textarea id="input" placeholder="Enter text to translate..."></textarea>
+            <div class="button-group">
+                <button onclick="translateText()" class="primary-btn">Translate Text</button>
+                <label for="fileInput" class="file-input-label">
+                    Choose File
+                    <input type="file" id="fileInput" accept=".txt">
+                </label>
+                <button onclick="translateFile()" class="secondary-btn">Translate File</button>
+            </div>
+            <div id="output" class="umwero-font"></div>
+            <button id="downloadPdfBtn" onclick="downloadTranslatedPDF()" class="action-btn" style="display: none;">Download as PDF</button>
+            <button id="downloadFontBtn" onclick="downloadFont()" class="action-btn">Download Umwero Font</button>
+            <div id="errorMessage" class="error-message" style="display: none;"></div>
+            <button id="toggleReferenceTable" onclick="toggleReferenceTable()" class="toggle-btn">Show Reference Table</button>
+            <div id="referenceTable" style="display: none;"></div>
+        </main>
+    </div>
+
+    <footer>
+        <p>Explore More About Umwero:</p>
+        <div class="social-icons">
+            <a href="https://www.youtube.com/@Umwero" target="_blank" class="icon-btn">YouTube</a>
+            <a href="https://twitter.com/@Mugisha1837" target="_blank" class="icon-btn">Twitter</a>
+            <a href="https://www.facebook.com/Umwero kinyarwanda Alphabet" target="_blank" class="icon-btn">Facebook</a>
+        </div>
+        <p>&copy; 2024 Umwero Alphabet. All Rights Reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
